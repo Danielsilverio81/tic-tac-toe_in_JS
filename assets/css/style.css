@@ -1,0 +1,30 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+h1 {text-align: center;}
+
+.box-game {
+    margin:70px auto;
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.space {
+    width: 80px;
+    height: 80px;
+    border: 2px solid gray;
+}
+
+.restart {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    margin: 5px auto;
+    justify-content: center;
+}
+
+.press-restart {
+    display: none;
+}
