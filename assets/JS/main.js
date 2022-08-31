@@ -1,14 +1,12 @@
 let player;
 const player1 = 'X';
 const player2 = 'O';
-let gameOver = false;
 
+//function that randomly generates the first to play
 const getPlayer = (max, min) => Math.floor(Math.random() * (max - min + 1) + min);
 let choice = getPlayer(2, 1);
 choice === 1 ? player = player1 : player = player2;
 
-const spaces = document.querySelectorAll('.space');
-const turns = document.querySelectorAll('[turn]');
 const body = document.querySelector('body');
 const reload = document.querySelector('.reload')
 const boxGame = document.querySelector('.box-game');
@@ -16,23 +14,21 @@ const result = document.querySelector('.result');
 const pressRestart = document.querySelector('.press-restart');
 const view = document.querySelector('.display-player');
 
-
-
+//function that starts the game
 const startGame = () => {
     timePlayer(player);
     firstDisplay(player)
 };
-
+//function that shows on screen first player
 const firstDisplay = (player) => {
     if(player == player1) {
-        view.innerHTML = `<p>E a vez do: <span>${player}</span></p>`
+        view.innerHTML = `<p>Quem começa é o: <span>${player}</span></p>`
     } else {
-        view.innerHTML = `<p>E a vez do: <strong>${player}</strong></p>`
+        view.innerHTML = `<p>Quem começa é o: <strong>${player}</strong></p>`
     }
 }
 
 const timePlayer = (playerTime) => {
-    if(gameOver) {return;}
     boxGame.addEventListener('click', (event) => {
         const el = event.target;
         if(el.classList.contains('space')) {
@@ -55,12 +51,12 @@ const timePlayer = (playerTime) => {
 
 const display = (playerTime) => {
     if (playerTime == player1) {
-        view.innerHTML = '<p>E a vez do: <span>X</span></p>'
+        view.innerHTML = `<p>E a vez do: <span>${playerTime}</span></p>`
     } else if(playerTime == player2) {
-        view.innerHTML = '<p>E a vez do: <strong>O</strong></p>'
+        view.innerHTML = `<p>E a vez do: <strong>${playerTime}</strong></p>`
     }
 }
-
+//function that checks the champion
 function winner() {
     let a0 = document.getElementById('a0').getAttribute('turn');
     let a1 = document.getElementById('a1').getAttribute('turn');
@@ -94,11 +90,11 @@ const text = (vencedor) => {
 restartGame();
 if (vencedor != '') {
     return result.innerText = `O vencedor foi o jogador que escolheu: ${vencedor}`
-} else if (vencedor == '') {
-    return result.innerHTML = `Vocês Empataram`
+} else {
+    return result.innerHTML = `<strong>Vocês Empataram</strong>`
 }
 };
-
+//function that restarts the game
 const restartGame = () => {
     body.style.backgroundImage = 'radial-gradient(circle at 50% -20.71%, #fff56b 0, #fff866 6.25%, #fdfa63 12.5%, #e7fb61 18.75%, #d0fb62 25%, #b5fa65 31.25%, #97f86a 37.5%, #73f670 43.75%, #3cf278 50%, #00ee82 56.25%, #00ea8f 62.5%, #00e69d 68.75%, #00e2ad 75%, #00dfbe 81.25%, #00dbd1 87.5%, #00d8e3 93.75%, #00d6f6 100%)'
     pressRestart.style.display = 'flex'

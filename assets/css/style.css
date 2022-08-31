@@ -2,8 +2,12 @@
 
 body {
     width: 100%;
-    height: 100vh;
     background-image: radial-gradient(circle at 14.37% 7.53%, #ff9c6f 0, #ff9277 6.25%, #ff887e 12.5%, #ff7c87 18.75%, #ff708f 25%, #ff6398 31.25%, #ff55a2 37.5%, #ff48ab 43.75%, #f23cb5 50%, #df34bf 56.25%, #c833cb 62.5%, #ad38d6 68.75%, #8c40e1 75%, #5e48ec 81.25%, #0051f4 87.5%, #0058fb 93.75%, #005eff 100%);
+}
+
+main {
+    width: 100%;
+    height: 100vh;
 }
 
 h1 {
@@ -20,8 +24,8 @@ h1 {
 .display-player {
     width: 100%;
     color: #213558;
-    font-size: 1.2em;
-    text-shadow: 2px 2px 2px #8c40e1;
+    font-size: 1.4em;
+    text-shadow: 2px 2px 2px #642e2e;
     display: flex;
     justify-content: center;
 }
@@ -30,7 +34,7 @@ span {color: #005eff;}
 strong {color: #7e1010;}
 
 .box-game {
-    margin:70px auto;
+    margin:55px auto;
     width: 310px;
     display: flex;
     flex-wrap: wrap;
@@ -54,6 +58,13 @@ strong {color: #7e1010;}
 
 .O {
     color: #7e1010;
+}
+
+.result {
+    padding: 5px;
+    margin: 10px;
+    font-size: 1.3em;
+    color: green;
 }
 
 .restart-game {
