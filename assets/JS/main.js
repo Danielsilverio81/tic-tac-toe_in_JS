@@ -14,11 +14,22 @@ const reload = document.querySelector('.reload')
 const boxGame = document.querySelector('.box-game');
 const result = document.querySelector('.result');
 const pressRestart = document.querySelector('.press-restart');
+const view = document.querySelector('.display-player');
+
 
 
 const startGame = () => {
     timePlayer(player);
+    firstDisplay(player)
 };
+
+const firstDisplay = (player) => {
+    if(player == player1) {
+        view.innerHTML = `<p>E a vez do: <span>${player}</span></p>`
+    } else {
+        view.innerHTML = `<p>E a vez do: <strong>${player}</strong></p>`
+    }
+}
 
 const timePlayer = (playerTime) => {
     if(gameOver) {return;}
@@ -38,8 +49,17 @@ const timePlayer = (playerTime) => {
             }
         } 
         winner();
+        display(playerTime);
     })
 };
+
+const display = (playerTime) => {
+    if (playerTime == player1) {
+        view.innerHTML = '<p>E a vez do: <span>X</span></p>'
+    } else if(playerTime == player2) {
+        view.innerHTML = '<p>E a vez do: <strong>O</strong></p>'
+    }
+}
 
 function winner() {
     let a0 = document.getElementById('a0').getAttribute('turn');
@@ -80,7 +100,7 @@ if (vencedor != '') {
 };
 
 const restartGame = () => {
-    body.style.background = '#5F9EA0'
+    body.style.backgroundImage = 'radial-gradient(circle at 50% -20.71%, #fff56b 0, #fff866 6.25%, #fdfa63 12.5%, #e7fb61 18.75%, #d0fb62 25%, #b5fa65 31.25%, #97f86a 37.5%, #73f670 43.75%, #3cf278 50%, #00ee82 56.25%, #00ea8f 62.5%, #00e69d 68.75%, #00e2ad 75%, #00dfbe 81.25%, #00dbd1 87.5%, #00d8e3 93.75%, #00d6f6 100%)'
     pressRestart.style.display = 'flex'
     pressRestart.addEventListener('click', newGame)
 };

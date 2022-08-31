@@ -1,10 +1,37 @@
 * {margin: 0; padding: 0; box-sizing: border-box;}
 
-h1 {text-align: center;}
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: radial-gradient(circle at 14.37% 7.53%, #ff9c6f 0, #ff9277 6.25%, #ff887e 12.5%, #ff7c87 18.75%, #ff708f 25%, #ff6398 31.25%, #ff55a2 37.5%, #ff48ab 43.75%, #f23cb5 50%, #df34bf 56.25%, #c833cb 62.5%, #ad38d6 68.75%, #8c40e1 75%, #5e48ec 81.25%, #0051f4 87.5%, #0058fb 93.75%, #005eff 100%);
+}
+
+h1 {
+    color: rgb(5, 5, 100);
+    margin: 15px;
+    text-align: center;
+}
+
+.reload {
+    font-size: 1.7em;
+    margin: 30px;
+}
+
+.display-player {
+    width: 100%;
+    color: #213558;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 2px #8c40e1;
+    display: flex;
+    justify-content: center;
+}
+
+span {color: #005eff;}
+strong {color: #7e1010;}
 
 .box-game {
     margin:70px auto;
-    width: 300px;
+    width: 310px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -16,19 +43,64 @@ h1 {text-align: center;}
     justify-content: center;
     align-items: center;
     font-size: 3.5em;
-    width: 80px;
-    height: 80px;
-    border: 2px solid gray;
+    width: 86px;
+    height: 86px;
+    border: 2px solid rgb(46, 14, 128);
 }
 
-.restart {
-    text-align: center;
+.X {
+    color: #053588;
+}
+
+.O {
+    color: #7e1010;
+}
+
+.restart-game {
+    color: darkblue;
+    font-size: 1.5em;
     width: 100%;
+    margin: 10px auto;
     display: flex;
-    margin: 5px auto;
+    align-items: center;
     justify-content: center;
 }
 
 .press-restart {
+    background-color: whitesmoke;
+    border-radius: 10%;
+    margin: 0 10px;
+    border: none;
+    color: #8c40e1;
+    padding: 10px;
     display: none;
+}
+
+.space:nth-child(1) {
+    border-top: none;
+    border-left: none;
+}
+.space:nth-child(2) {
+    border-top: none;
+}
+.space:nth-child(3) {
+    border-top: none;
+    border-right: none;
+}
+.space:nth-child(4) {
+    border-left: none;
+}
+.space:nth-child(6) {
+    border-right: none;
+}
+.space:nth-child(7) {
+    border-left: none;
+    border-bottom: none;
+}
+.space:nth-child(8) {
+    border-bottom: none;
+}
+.space:nth-child(9) {
+    border-right: none;
+    border-bottom: none;
 }
